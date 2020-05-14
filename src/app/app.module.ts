@@ -20,6 +20,7 @@ import { TokenInterceptor } from '@shared/interceptors/token.interceptor';
 import { ErrorInterceptor } from '@shared/interceptors/error.interceptor';
 import { AuthGuard } from '@shared/guards/auth.guard';
 import { UnAuthGuard } from '@shared/guards/un-auth.guard';
+import { MaterialModule } from './material/material.module';
 
 export function initLanguage(translateService: TranslatesService): Function {
   return (): Promise<any> => translateService.initLanguage();
@@ -34,7 +35,7 @@ export function initLanguage(translateService: TranslatesService): Function {
     AppRoutes,
     BrowserAnimationsModule,
     CookieModule.forRoot(),
-    SharedModule.forRoot(),
+    SharedModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [
